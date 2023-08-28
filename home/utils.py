@@ -13,7 +13,7 @@ def sendAffiliateMail():
         'name': name,
     }
 
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = "c2cc@mailinator.com"
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/waitlist.html', context)
@@ -59,7 +59,7 @@ def sendNewPartnerMail():
         'outletSubCategory': outletSubCategory,
         'outletDescription': outletDescription,
     }
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = "c2cc@mailinator.com"
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/new_partner.html', context)
@@ -81,7 +81,7 @@ def offerExpired():
         'OfferValue': OfferValue,
         'OfferExpiryDate': OfferExpiryDate
     }
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = "c2cc@mailinator.com"
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/offer_expired.html', context)
