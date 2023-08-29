@@ -100,7 +100,7 @@
                                         >You’ve acquired a brand new
                                         customer!</b
                                       ><br /><br />
-                                      A customer from {{OutletName}} just
+                                      A customer from {{ outletName }} just
                                       redeemed your Acquisition Offer.<br /><br />
                                       <b>Customer</b><br />
                                       {{ Name }}<br />
@@ -118,13 +118,15 @@
                                       Category: {{ outletCategory }}<br />
                                       SubCategory: {{ outletSubCategory }}<br />
                                       Description: {{ outletDescription }}<br />
-                                      Outlet Url: (LINK)<br /><br />
+                                      Outlet Url:
+                                      <a href="{{ outletUrl }}">View</a> <br />
+                                      <br />
 
                                       <a href="https://www.xircls.com/"
                                         ><button>View Profile</button></a
                                       ><br />
                                       <br />
-                                      <b>Do more with {{OutletName}}!</b> <br />
+                                      <b>Do more with {{outletName}}!</b> <br />
                                       1. Add as Preferred Partner(LINK). Give
                                       automatic priority in each other’s
                                       collaborative campaigns. <br />

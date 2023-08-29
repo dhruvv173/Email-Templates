@@ -7,13 +7,13 @@ django.setup()
 
 
 def sendAffiliateMail():
-    subject = "Welcome to our waitlist"
-    name = "Cench"
+    subject = "Thank You for Joining the XIRCLS Influencer Program Waitlist!"
+    name = ""
     context = {
         'name': name,
     }
 
-    recipient_email = "c2cc@mailinator.com"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/waitlist.html', context)
@@ -26,17 +26,33 @@ def sendAffiliateMail():
 
 
 def sendPromoMail():
-    subject = "Congratulations! You have won a Promo Code!"
-    name = "Cench"
-    promo_code = "x12badsas"
+    subject = "You just acquired a customer from {{ OutletName }}!"
+    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    outletName = "XYZ"
+    TransactionAmount = 999
+    OfferTitle = "ABX"
+    OfferValue = 999
+    OfferCode = "Asdasdadsa"
+    outletCategory = "Banking"
+    outletSubCategory = "asda"
+    outletDescription = "Lorem ipsum"
+    outletUrl = "xircls.com"
     context = {
-        'name': name,
-        'promo_code': promo_code
+        'outletName': outletName,
+        'outletCategory': outletCategory,
+        'outletSubCategory': outletSubCategory,
+        'outletDescription': outletDescription,
+        'outletUrl': outletUrl,
+        'OfferValue': OfferValue,
+        'OfferTitle': OfferTitle,
+        'TransactionAmount': TransactionAmount,
+        'OfferCode': OfferCode
+
     }
-    recipient_email = "c2cee@mailinator.com"
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
-    html_message = render_to_string('home/promo.html', context)
+    html_message = render_to_string(
+        'home/new_customer_acquired.html', context)
     try:
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
@@ -47,7 +63,7 @@ def sendPromoMail():
 
 def sendNewPartnerMail():
     subject = "Request accepted. <OutletName> and you are now Preferred Partners!"
-    name = "Cench"
+    name = "Aastha"
     outletName = "JP"
     outletCategory = "Finance"
     outletSubCategory = "Banking"
@@ -59,7 +75,7 @@ def sendNewPartnerMail():
         'outletSubCategory': outletSubCategory,
         'outletDescription': outletDescription,
     }
-    recipient_email = "c2cc@mailinator.com"
+    recipient_email = "dhruv.parmar_19@sakec.ac.in"
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/new_partner.html', context)
