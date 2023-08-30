@@ -39,5 +39,13 @@ urlpatterns = [
          name='inner-xircl-expired'),
     path('new-customer-acquired/', views.NewCustomerAcquired,
          name='new-customer-acquired'),
-    path('merchant-signup/', views.MerchantSignup, name='merchant-signup'),
+    path('welcome/', views.Welcome, name='welcome'),
+    path('verify-email/', views.VerifyEmail, name='verify-email'),
+    path('reset-password/', views.ResetPassword, name='reset-password'),
+    path('new-merchant-signup/', views.NewMerchantSignup,
+         name='new-merchant-signup'),
+    path('received-query/', views.ReceivedQuery, name='received-query'),
+    path('request-schedule-demo/', views.RequestScheduleDemo,
+         name='request-schedule-demo')
+
 ]

@@ -709,13 +709,137 @@ def InnerXirclExpired(request):
     return JsonResponse(response_data)
 
 
-def MerchantSignup(request):
+def Welcome(request):
     subject = "Welcome to the world's first network for cross-marketing collaborations!"
 
-    recipient_email = "tanmay.vedpathak@xircls.com"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
-    html_message = render_to_string('home/merchant_signup.html')
+    html_message = render_to_string('home/welcome.html')
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def VerifyEmail(request):
+    subject = "Please verify your email address"
+    VerifyUrl = "https://www.xircls.com"
+    context = {
+        'VerifyUrl': VerifyUrl
+    }
+    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/verify_email.html', context)
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def ResetPassword(request):
+    subject = "Reset your password"
+    ResetUrl = ""
+    context = {
+        'ResetUrl': ResetUrl
+    }
+    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/reset_password.html', context)
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def NewMerchantSignup(request):
+    Merchant_Name = ""
+    subject = f"Merchant { Merchant_Name } has signed up!"
+    Merchant_Email = ""
+    Merchant_Phone = ""
+    context = {
+        'Merchant_Name': Merchant_Name,
+        'Merchant_Email': Merchant_Email,
+        'Merchant_Phone': Merchant_Phone
+    }
+    recipient_email = ""
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/new_merchant_signup.html', context)
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def ReceivedQuery(request):
+    subject = "We have received your query!"
+    Merchant_Name = "Dhruv"
+    context = {
+        'Merchant_Name': Merchant_Name
+    }
+    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/received_query.html', context)
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def RequestScheduleDemo(request):
+    subject = "We have received your request to schedule a demo!"
+    Merchant_Name = "Dhruv"
+    context = {
+        'Merchant_Name': Merchant_Name
+    }
+    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/request_schedule_demo.html', context)
     try:
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
