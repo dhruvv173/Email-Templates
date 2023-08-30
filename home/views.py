@@ -161,8 +161,8 @@ def NewOnTheNetworkMail(request):
     return JsonResponse(response_data)
 
 
-def CustomerRetained(request):
-    subject = "Your offer has expired! Update now"
+def NewCustomerAcquired(request):
+    subject = "You just acquired a customer from {{ outletName }}!"
     outletName = ""
     Name = ""
     Email = ""
@@ -195,6 +195,43 @@ def CustomerRetained(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/new_customer_acquired.html', context)
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'Affiliate email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def CustomerRetained(request):
+    subject = "You just retained a customer!"
+    Name = ""
+    Email = ""
+    Mobile = ""
+    OfferTitle = ""
+    OfferValue = ""
+    OfferCode = ""
+    TransactionAmount = ""
+    context = {
+        'TransactionAmount': TransactionAmount,
+        'Name': Name,
+        'Email': Email,
+        'Mobile': Mobile,
+        'OfferTitle': OfferTitle,
+        'OfferValue': OfferValue,
+        'OfferCode': OfferCode,
+    }
+
+    recipient_email = ""
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/customer_retained.html', context)
     try:
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
