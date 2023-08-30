@@ -19,16 +19,6 @@ def AffiliateMail(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/waitlist.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
 
     return JsonResponse(response_data)
 
@@ -50,16 +40,6 @@ def OfferExpiryMail(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/offer_expiry.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
 
     return JsonResponse(response_data)
 
@@ -81,16 +61,7 @@ def OfferExpiredMail(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/offer_expired.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("offer_expired", html_message)
 
     return JsonResponse(response_data)
 
@@ -114,16 +85,7 @@ def NewPartnerMail(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/new_partner.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("new_partner", html_message)
 
     return JsonResponse(response_data)
 
@@ -147,16 +109,7 @@ def NewOnTheNetworkMail(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/new_on_the_network.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("new_on_network", html_message)
 
     return JsonResponse(response_data)
 
@@ -195,16 +148,7 @@ def NewCustomerAcquired(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/new_customer_acquired.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("customer_acquired", html_message)
 
     return JsonResponse(response_data)
 
@@ -232,16 +176,7 @@ def CustomerRetained(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/customer_retained.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("customer_retained", html_message)
 
     return JsonResponse(response_data)
 
@@ -257,16 +192,7 @@ def CampaignLive(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/campaign_live.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("campaign_live", html_message)
 
     return JsonResponse(response_data)
 
@@ -278,16 +204,7 @@ def SniperLive(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/Sniper/sniper-live.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("sniper_live", html_message)
 
     return JsonResponse(response_data)
 
@@ -299,16 +216,7 @@ def SniperResumed(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/Sniper/sniper-resumed.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("sniper_resumed", html_message)
 
     return JsonResponse(response_data)
 
@@ -320,16 +228,7 @@ def SniperStopped(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/Sniper/sniper-stopped.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("sniper_stopped", html_message)
 
     return JsonResponse(response_data)
 
@@ -345,16 +244,7 @@ def SniperAdminResumed(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/Sniper/Admin/sniper-resumed.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("sniper_admin_resumed", html_message)
 
     return JsonResponse(response_data)
 
@@ -371,16 +261,7 @@ def SniperAdminStopped(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/Sniper/Admin/sniper-stopped.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("sniper_admin_stopped", html_message)
 
     return JsonResponse(response_data)
 
@@ -392,16 +273,7 @@ def SemperFiLive(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/SemperFi/semperfi-live.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("semperfi_live", html_message)
 
     return JsonResponse(response_data)
 
@@ -413,16 +285,7 @@ def SemperFiStopped(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/SemperFi/semperfi-stopped.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("semperfi_stopped", html_message)
 
     return JsonResponse(response_data)
 
@@ -434,16 +297,7 @@ def SemperFiResumed(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/SemperFi/semperfi-resumed.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("semperfi_resumed", html_message)
 
     return JsonResponse(response_data)
 
@@ -461,16 +315,7 @@ def SemperFiAdminStopped(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/SemperFi/Admin/semperfi-stopped.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("semperfi_admin_stopped", html_message)
 
     return JsonResponse(response_data)
 
@@ -486,16 +331,7 @@ def SemperFiAdminResumed(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/SemperFi/Admin/semperfi-resumed.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("semperfi_admin_resumed", html_message)
 
     return JsonResponse(response_data)
 
@@ -507,16 +343,7 @@ def InfinitiLive(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/Infiniti/infiniti-live.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("infiniti_live", html_message)
 
     return JsonResponse(response_data)
 
@@ -528,16 +355,7 @@ def InfinitiStopped(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/Infiniti/infiniti-stopped.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("infiniti_stopped", html_message)
 
     return JsonResponse(response_data)
 
@@ -549,16 +367,7 @@ def InfinitiResumed(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/Infiniti/infiniti-resumed.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("infiniti_resumed", html_message)
 
     return JsonResponse(response_data)
 
@@ -574,16 +383,7 @@ def InfinitiAdminResumed(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/Infiniti/Admin/infiniti-resumed.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("infiniti_admin_resumed", html_message)
 
     return JsonResponse(response_data)
 
@@ -601,16 +401,7 @@ def InfinitiAdminStopped(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/Infiniti/Admin/infiniti-stopped.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("infiniti_admin_stopped", html_message)
 
     return JsonResponse(response_data)
 
@@ -637,16 +428,7 @@ def AddedToInnerXircl(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/InnerXIRCL/added_to_inner_xircl.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("added_to_inner_xircl", html_message)
 
     return JsonResponse(response_data)
 
@@ -668,16 +450,7 @@ def InnerXirclExpiring(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/InnerXIRCL/inner_xircl_expiring.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("inner_xircl_expiring", html_message)
 
     return JsonResponse(response_data)
 
@@ -695,16 +468,7 @@ def InnerXirclExpired(request):
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string(
         'home/InnerXIRCL/inner_xircl_expired.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'Email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("inner_xircl_expired", html_message)
 
     return JsonResponse(response_data)
 
@@ -716,40 +480,7 @@ def Welcome(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/welcome.html')
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
-
-    return JsonResponse(response_data)
-
-
-def VerifyEmail(request):
-    subject = "Please verify your email address"
-    VerifyUrl = "https://www.xircls.com"
-    context = {
-        'VerifyUrl': VerifyUrl
-    }
-    recipient_email = ""
-    sender_name = "XIRCLS"
-    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
-    html_message = render_to_string('home/verify_email.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    event = context("welcome", html_message)
 
     return JsonResponse(response_data)
 
@@ -764,21 +495,11 @@ def ResetPassword(request):
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/reset_password.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
-
+    event = context("reset_password", html_message)
     return JsonResponse(response_data)
 
 
-def NewMerchantSignup(request):
+def MerchantSignup(request):
     Merchant_Name = ""
     subject = f"Merchant { Merchant_Name } has signed up!"
     Merchant_Email = ""
@@ -791,17 +512,24 @@ def NewMerchantSignup(request):
     recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
-    html_message = render_to_string('home/new_merchant_signup.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    html_message = render_to_string(
+        'home/merchant_signup_template.html', context)
+    event = context("merchant_signup", html_message)
+    return JsonResponse(response_data)
+
+
+def RequestScheduleDemo(request):
+    subject = "We have received your request to schedule a demo!"
+    Merchant_Name = ""
+    context = {
+        'Merchant_Name': Merchant_Name
+    }
+    recipient_email = ""
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string(
+        'home/request_schedule_demo_template.html', context)
+    event = context("request_schedule_demo", html_message)
 
     return JsonResponse(response_data)
 
@@ -815,40 +543,34 @@ def ReceivedQuery(request):
     recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
-    html_message = render_to_string('home/received_query.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    html_message = render_to_string(
+        'home/received_query_template.html', context)
+    event = context("received_query", html_message)
 
     return JsonResponse(response_data)
 
 
-def RequestScheduleDemo(request):
-    subject = "We have received your request to schedule a demo!"
-    Merchant_Name = ""
+def VerifyEmail(request):
+    subject = "Please verify your email address"
+    VerifyUrl = "https://www.xircls.com"
     context = {
-        'Merchant_Name': Merchant_Name
+        'VerifyUrl': VerifyUrl
     }
     recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
-    html_message = render_to_string('home/request_schedule_demo.html', context)
-    try:
-        send_mail(subject, '', from_email, [
-                  recipient_email], html_message=html_message)
-        response_data = {
-            'message': 'email sent'
-        }
-    except Exception as e:
-        response_data = {
-            'error': f'Failed due to {e}'
-        }
+    html_message = render_to_string('home/verify_email_template.html', context)
+    event = context("verify_email", html_message)
 
-    return JsonResponse(response_data)
+    return JsonResponse(event)
+
+
+def context(event, html_message):
+    if event == 'verify_email':
+        return html_message
+    elif event == 'received_query':
+        return html_message
+    elif event == 'request_schedule_demo':
+        return html_message
+    elif event == 'merchant_signup':
+        return html_message
