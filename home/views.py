@@ -23,7 +23,7 @@ def AffiliateMail(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -54,7 +54,7 @@ def OfferExpiryMail(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -85,7 +85,7 @@ def OfferExpiredMail(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -96,9 +96,9 @@ def OfferExpiredMail(request):
 
 
 def NewPartnerMail(request):
-    subject = "Your offer has expired! Update now"
-    name = ""
     outletName = ""
+    subject = f"Request accepted. {outletName} and you are now Preferred Partners!"
+    name = ""
     outletCategory = ""
     outletSubCategory = ""
     outletDescription = ""
@@ -118,7 +118,7 @@ def NewPartnerMail(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -129,8 +129,8 @@ def NewPartnerMail(request):
 
 
 def NewOnTheNetworkMail(request):
-    subject = "Your offer has expired! Update now"
     outletName = ""
+    subject = f"{outletName} has joined the network and is looking for partners!"
     outletCategory = ""
     outletSubCategory = ""
     outletDescription = ""
@@ -151,7 +151,7 @@ def NewOnTheNetworkMail(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -199,7 +199,7 @@ def NewCustomerAcquired(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -236,7 +236,7 @@ def CustomerRetained(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -261,7 +261,7 @@ def CampaignLive(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -282,7 +282,7 @@ def SniperLive(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -303,7 +303,7 @@ def SniperResumed(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -324,7 +324,7 @@ def SniperStopped(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -349,7 +349,7 @@ def SniperAdminResumed(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -375,7 +375,7 @@ def SniperAdminStopped(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -396,7 +396,7 @@ def SemperFiLive(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -417,7 +417,7 @@ def SemperFiStopped(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -438,7 +438,7 @@ def SemperFiResumed(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -465,7 +465,7 @@ def SemperFiAdminStopped(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -490,7 +490,7 @@ def SemperFiAdminResumed(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -511,7 +511,7 @@ def InfinitiLive(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -532,7 +532,7 @@ def InfinitiStopped(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -553,7 +553,7 @@ def InfinitiResumed(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -578,7 +578,7 @@ def InfinitiAdminResumed(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -605,7 +605,7 @@ def InfinitiAdminStopped(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -641,7 +641,7 @@ def AddedToInnerXircl(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -672,7 +672,7 @@ def InnerXirclExpiring(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
         }
     except Exception as e:
         response_data = {
@@ -699,7 +699,28 @@ def InnerXirclExpired(request):
         send_mail(subject, '', from_email, [
                   recipient_email], html_message=html_message)
         response_data = {
-            'message': 'Affiliate email sent'
+            'message': 'Email sent'
+        }
+    except Exception as e:
+        response_data = {
+            'error': f'Failed due to {e}'
+        }
+
+    return JsonResponse(response_data)
+
+
+def MerchantSignup(request):
+    subject = "Welcome to the world's first network for cross-marketing collaborations!"
+
+    recipient_email = "tanmay.vedpathak@xircls.com"
+    sender_name = "XIRCLS"
+    from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
+    html_message = render_to_string('home/merchant_signup.html')
+    try:
+        send_mail(subject, '', from_email, [
+                  recipient_email], html_message=html_message)
+        response_data = {
+            'message': 'email sent'
         }
     except Exception as e:
         response_data = {
