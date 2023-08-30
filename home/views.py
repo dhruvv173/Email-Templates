@@ -46,7 +46,7 @@ def OfferExpiryMail(request):
         'OfferExpiryDate': OfferExpiryDate
     }
 
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/offer_expiry.html', context)
@@ -736,7 +736,7 @@ def VerifyEmail(request):
     context = {
         'VerifyUrl': VerifyUrl
     }
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/verify_email.html', context)
@@ -760,7 +760,7 @@ def ResetPassword(request):
     context = {
         'ResetUrl': ResetUrl
     }
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/reset_password.html', context)
@@ -808,11 +808,11 @@ def NewMerchantSignup(request):
 
 def ReceivedQuery(request):
     subject = "We have received your query!"
-    Merchant_Name = "Dhruv"
+    Merchant_Name = ""
     context = {
         'Merchant_Name': Merchant_Name
     }
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/received_query.html', context)
@@ -832,11 +832,11 @@ def ReceivedQuery(request):
 
 def RequestScheduleDemo(request):
     subject = "We have received your request to schedule a demo!"
-    Merchant_Name = "Dhruv"
+    Merchant_Name = ""
     context = {
         'Merchant_Name': Merchant_Name
     }
-    recipient_email = "dhruv.parmar_19@sakec.ac.in"
+    recipient_email = ""
     sender_name = "XIRCLS"
     from_email = formataddr((sender_name, settings.EMAIL_HOST_USER))
     html_message = render_to_string('home/request_schedule_demo.html', context)
