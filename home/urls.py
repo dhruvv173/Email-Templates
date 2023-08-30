@@ -37,4 +37,6 @@ urlpatterns = [
          name='inner-xircl-expiring'),
     path('inner-xircl-expired', views.InnerXirclExpired,
          name='inner-xircl-expired'),
+    path('new-customer-acquired', views.NewCustomerAcquired,
+         name='new-customer-acquired'),
 ]
