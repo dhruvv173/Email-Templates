@@ -563,14 +563,3 @@ def VerifyEmail(request):
     event = context("verify_email", html_message)
 
     return JsonResponse(event)
-
-
-def context(event, html_message):
-    if event == 'verify_email':
-        return html_message
-    elif event == 'received_query':
-        return html_message
-    elif event == 'request_schedule_demo':
-        return html_message
-    elif event == 'merchant_signup':
-        return html_message
